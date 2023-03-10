@@ -34,6 +34,14 @@ h2 {
 	font-size: 1.35rem
 }
 
+.fine-print {
+	font-size: 0.85rem
+}
+
+.fine-print-emoji {
+	font-size: 1.2rem
+}
+
 .list-social-icons a {
 	color: #495057
 }

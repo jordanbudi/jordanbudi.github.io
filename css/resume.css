@@ -2,14 +2,63 @@ body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
   color: #868e96;
+  overflow-x: hidden;
 }
 
+/*adding in*/
+
 @media (min-width: 992px) {
+    body {
+        padding-top: 0;
+        padding-left: 17rem;
+    }
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 3rem; /* Adjust font size for small screens */
+        line-height: 3.5rem;
+    }
+}
+
+#sideNav {
+    width: 17rem;
+    /* Make sure the main content area is adjusted accordingly */
+}
+
+@media (max-width: 992px) {
+    #sideNav {
+        position: relative; /* Adjust positioning for smaller screens */
+        width: 100%;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 100vw; /* Ensure container doesn't exceed viewport width */
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*end adding in*/
+
+/*@media (min-width: 992px) {
   body {
     padding-top: 0;
     padding-left: 17rem;
   }
-}
+}*/
 
 h1,
 h2,

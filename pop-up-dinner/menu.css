@@ -12,13 +12,14 @@ body {
 }
 
 .menu-container {
-    background-color: white;
-    padding: 20px 40px;
-    border: 2px solid #ccc;
+    background-color: #f5deb3; /* Light gold-brown color */
+    padding: 40px 60px;
+    border: 1px solid #d3a53d;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 60%;
-    max-width: 800px;
+    max-width: 600px;
     text-align: center;
+    margin: 20px; /* Added margin for spacing */
 }
 
 h1 {

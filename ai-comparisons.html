@@ -174,6 +174,9 @@
     border-right: 1px solid #F2EEE8;
     transition: background 0.15s;
     cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   .uc-case:hover { background: #FDFCFB; }
 
@@ -229,6 +232,107 @@
   }
 
   .uc-avoid-tag::before { content: "✗"; color: #E05C5C; font-size: 11px; }
+
+  /* Example Prompt */
+  .uc-prompt-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 10px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+  }
+
+  .uc-prompt-btn:hover { background: #F6F3EE; border-color: #ccc; }
+
+  .uc-prompt-btn .btn-arrow {
+    font-size: 10px;
+    transition: transform 0.25s ease;
+    display: inline-block;
+  }
+
+  .uc-prompt-btn.open .btn-arrow { transform: rotate(180deg); }
+
+  .uc-prompt-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+    opacity: 0;
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .uc-prompt-drawer.open {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .uc-prompt-inner {
+    padding: 16px 20px 18px;
+    border-top: 1px dashed var(--border);
+    background: #FDFCFB;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .uc-prompt-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+
+  .uc-prompt-box {
+    background: #1C1C1C;
+    color: #E8E4DC;
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 13px;
+    line-height: 1.65;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 14px;
+    position: relative;
+  }
+
+  .uc-prompt-copy {
+    position: absolute;
+    top: 10px; right: 12px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    border-radius: 6px;
+    color: #aaa;
+    font-size: 11px;
+    padding: 3px 8px;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.15s;
+  }
+  .uc-prompt-copy:hover { background: rgba(255,255,255,0.2); color: white; }
+
+  .uc-prompt-why-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #aaa;
+    margin-bottom: 6px;
+  }
+
+  .uc-prompt-why {
+    font-size: 13px;
+    color: #666;
+    line-height: 1.6;
+  }
 
   .legend {
     display: flex;
@@ -490,36 +594,79 @@
       <div class="uc-panel-tagline">Your best pick when quality of thought and writing matters most</div>
     </div>
     <div class="uc-cases-grid">
+
       <div class="uc-case">
         <div class="uc-case-icon">📝</div>
         <div class="uc-case-title">Long-form writing & editing</div>
         <div class="uc-case-desc">Essays, reports, blog posts, white papers. Claude maintains tone, nuance, and coherence over thousands of words better than any rival.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p1', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p1"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Write a 2,000-word opinion essay arguing that remote work improves long-term employee wellbeing. Maintain a thoughtful, nuanced tone — acknowledge counterarguments fairly before refuting them. Use clear section headers. Flag any uncertain claims explicitly rather than stating them as fact. End with a memorable closing paragraph.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Long-form structure with nuance instructions, explicit uncertainty flagging, and sustained tone are all Claude specialties.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">📖</div>
         <div class="uc-case-title">Summarizing large documents</div>
         <div class="uc-case-desc">Contracts, research papers, books. With a 200K token context window, Claude can ingest and faithfully summarize massive files in one go.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p2', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p2"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Here is a 150-page legal contract [paste text]. Summarize it in three sections: (1) key obligations for each party, (2) termination clauses and penalties, (3) any ambiguous language I should flag for a lawyer. Preserve exact clause numbers when referencing specifics.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Claude's 200K context window handles massive documents in one pass, and its structured output following is precise enough to organize findings by clause number reliably.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🎭</div>
         <div class="uc-case-title">Creative fiction & storytelling</div>
         <div class="uc-case-desc">Character development, plot structure, world-building. Claude produces the most distinctive and imaginative creative writing of the three.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p3', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p3"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Write the opening chapter of a literary novel set in 1920s Osaka. The protagonist is a female textile merchant who secretly writes poetry. Use close third-person POV, avoid clichés, and let the setting emerge through sensory detail rather than exposition. Aim for ~900 words with a closing line that creates unease.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Specific stylistic constraints (POV, show-don't-tell, tonal goal) suit Claude's literary sensibility. It's the most likely model to deliver a genuinely distinctive voice rather than a generic narrative.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">⚖️</div>
         <div class="uc-case-title">Nuanced analysis & reasoning</div>
         <div class="uc-case-desc">Legal memos, policy analysis, ethical dilemmas. Claude excels at holding multiple perspectives and hedging appropriately when uncertain.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p4', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p4"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Analyze the ethical tradeoffs of mandatory vaccination policy from three frameworks: utilitarian, libertarian, and communitarian. For each, present the strongest case and its most significant counterargument. Conclude with your assessment of where the most defensible middle ground lies, noting where you're uncertain.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Multi-perspective ethical reasoning with explicit uncertainty acknowledgment is Claude's strongest mode — it's trained to hold competing ideas without collapsing into one-sided conclusions.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">💻</div>
         <div class="uc-case-title">Developer workflows (API)</div>
         <div class="uc-case-desc">Claude Code, agentic tasks, instruction-following pipelines. The API is best-in-class for complex, multi-step developer workflows.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p5', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p5"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">You are an AI agent in a multi-step pipeline. Your task: (1) read the JSON schema provided, (2) generate a TypeScript interface matching it exactly, (3) write a validation function that checks all required fields and returns typed errors, (4) output only valid TypeScript with no prose. Schema: [paste schema]<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Claude's instruction-following precision and "output only code" compliance make it ideal for agentic pipelines where unexpected prose or formatting breaks downstream processes.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🧑‍🏫</div>
         <div class="uc-case-title">Teaching & explanation</div>
         <div class="uc-case-desc">Breaking down complex concepts with clarity, patience, and accurate calibration. Claude won't fake confidence when it doesn't know something.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('c-p6', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="c-p6"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Explain how transformer attention mechanisms work to someone who understands Python and basic linear algebra but has never studied ML. Use a concrete analogy first, then build up to the math. If any part of your explanation involves simplifications that could mislead at a deeper level, flag them explicitly.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Claude</div>
+          <div class="uc-prompt-why">Asking Claude to flag simplifications leverages its calibrated honesty — it will genuinely note where analogies break down rather than leaving the learner with a subtly wrong mental model.</div>
+        </div></div>
       </div>
+
     </div>
     <div class="uc-avoid">
       <div class="uc-avoid-label">Not the best choice for</div>
@@ -540,36 +687,79 @@
       <div class="uc-panel-tagline">Your best pick for technical power, creative tools, and a mature ecosystem</div>
     </div>
     <div class="uc-cases-grid">
+
       <div class="uc-case">
         <div class="uc-case-icon">🧮</div>
         <div class="uc-case-title">Advanced math & hard reasoning</div>
         <div class="uc-case-desc">Proofs, quantitative problems, logic puzzles. With o1/o3 models, ChatGPT leads on formal reasoning benchmarks by a wide margin.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p1', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p1"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Prove that there are infinitely many prime numbers using at least two distinct methods. For each proof, identify the core logical mechanism and explain why it is logically airtight. Then describe a known failed approach and where its reasoning breaks down.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">o1/o3 models are purpose-built for formal reasoning chains. Asking for multiple proof methods and failure analysis pushes them into their highest-value mode: rigorous, step-by-step logical verification.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🎨</div>
         <div class="uc-case-title">Image generation</div>
         <div class="uc-case-desc">DALL·E 3 is deeply integrated and produces high-quality, prompt-faithful images. The only option here if you need visuals without a separate tool.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p2', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p2"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Generate an image: a lone lighthouse on a rocky coastline at golden hour, painterly style reminiscent of Winslow Homer, dramatic storm clouds breaking in the background, warm amber light hitting the white tower, no text or watermarks, wide landscape format.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">DALL·E 3 responds well to detailed compositional instructions and style references. Specificity (lighting, artist reference, format) dramatically improves output quality over vague prompts.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">📊</div>
         <div class="uc-case-title">Data analysis & charts</div>
         <div class="uc-case-desc">Upload CSVs, run Python, generate visualizations — all inside the chat. Advanced Data Analysis (Code Interpreter) is a killer feature.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p3', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p3"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">I'm uploading a CSV of 500 customer transactions (columns: date, category, amount, region). Analyze the data, identify the top 3 revenue-driving categories per region, flag any anomalies in monthly spend, and produce a bar chart comparing regional totals. Show your Python code step by step.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">Code Interpreter executes Python directly on your file, generates charts inline, and shows its work — an end-to-end data workflow no other model matches in a single session.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🎙️</div>
         <div class="uc-case-title">Voice conversations</div>
         <div class="uc-case-desc">Real-time, natural spoken dialogue. ChatGPT's Advanced Voice Mode is the most polished voice AI experience available today.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p4', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p4"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">[Spoken] Let's do a mock job interview. You're a senior engineering manager at a mid-size SaaS company. Ask me behavioral questions one at a time, give me 30 seconds to respond, then give brief coaching feedback before moving to the next question. Start now.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">Advanced Voice Mode handles turn-taking, natural pacing, and real-time feedback delivery in spoken form — a structured role-play like this is impossible to replicate with text-only models.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🔌</div>
         <div class="uc-case-title">Plugin & tool integrations</div>
         <div class="uc-case-desc">The most mature third-party ecosystem. If you need AI connected to a specific SaaS tool, ChatGPT likely has a plugin or GPT for it.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p5', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p5"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Using the Zapier plugin, create a workflow that: (1) monitors my Gmail for emails with "invoice" in the subject, (2) extracts the sender, amount, and due date, (3) adds a row to my Google Sheet named "Invoice Tracker", (4) sends me a Slack DM summary. Walk me through each step.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">ChatGPT's plugin ecosystem lets it orchestrate real actions across third-party tools in a single conversation — this multi-app workflow would require custom code without it.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🌐</div>
         <div class="uc-case-title">Coding assistance</div>
         <div class="uc-case-desc">Debugging, code generation, architecture help. Strong across languages, especially with o3 for complex algorithmic challenges.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gpt-p6', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gpt-p6"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Here's a Python function that's timing out on inputs over 10,000 elements: [paste code]. Diagnose the performance bottleneck, explain the algorithmic complexity of the current approach, then rewrite it to run in O(n log n) or better. Include before/after complexity analysis and a test case that demonstrates the improvement.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for ChatGPT</div>
+          <div class="uc-prompt-why">o3's reasoning depth shines on algorithmic optimization — it can trace complexity, identify the bottleneck, and verify the fix is correct rather than just plausible.</div>
+        </div></div>
       </div>
+
     </div>
     <div class="uc-avoid">
       <div class="uc-avoid-label">Not the best choice for</div>
@@ -589,36 +779,79 @@
       <div class="uc-panel-tagline">Your best pick when real-time info, scale, or Google integration matters</div>
     </div>
     <div class="uc-cases-grid">
+
       <div class="uc-case">
         <div class="uc-case-icon">📰</div>
         <div class="uc-case-title">Current events & live research</div>
         <div class="uc-case-desc">Real-time Google Search baked in. Gemini knows what happened today. Essential for news, market updates, sports, and fast-moving topics.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p1', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p1"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Search the web for the three biggest AI news stories from the past 48 hours. For each: summarize what happened, why it matters, and which companies or researchers are involved. Then give me a one-paragraph "so what" synthesis of what these stories collectively signal about the industry's direction.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">Gemini's native Google Search integration means it can pull genuinely current results — no other model can reliably answer "past 48 hours" without hallucinating or falling back on stale training data.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🎬</div>
         <div class="uc-case-title">Video & multimedia understanding</div>
         <div class="uc-case-desc">Analyze YouTube videos, process audio, interpret complex visuals. Gemini's native multimodal architecture is the strongest of the three.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p2', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p2"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Here is a 20-minute product demo video [upload or link]. Watch the full video and: (1) extract every feature demonstrated with timestamps, (2) identify any bugs or UX friction moments the presenter glosses over, (3) draft a competitive analysis comparing what you see to known alternatives.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">Gemini's native video understanding lets it process the entire video as input — extracting timestamped events and subtle UX issues from a recording is a uniquely multimodal task no text-only model can do.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">🌍</div>
         <div class="uc-case-title">Multilingual tasks</div>
         <div class="uc-case-desc">Translation, non-English writing, cross-lingual analysis. Built on Google Translate's backbone — the best choice for non-English work.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p3', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p3"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Translate the following customer support email from English into French, Brazilian Portuguese, and Japanese. Preserve a professional but warm tone in each language, adapt any idioms culturally rather than literally, and flag any concepts that don't translate cleanly. [paste email]<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">Gemini's Google Translate backbone gives it best-in-class multilingual output. Asking it to flag non-translatable concepts leverages its cross-lingual awareness rather than just word-for-word substitution.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">📂</div>
         <div class="uc-case-title">Massive document processing</div>
         <div class="uc-case-desc">With a 1M token context window, Gemini 1.5 Pro can process entire codebases, books, or hours of video transcripts in a single prompt.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p4', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p4"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Here is our entire backend codebase [paste ~200K tokens of code]. Perform a full audit: (1) identify all database calls that lack error handling, (2) flag any hardcoded credentials or secrets, (3) list functions with cyclomatic complexity above 10, (4) suggest the three highest-priority refactors.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">A 1M token context window means Gemini can ingest an entire large codebase at once — cross-file analysis (like tracing all DB calls) is only possible when the whole codebase fits in context simultaneously.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">📱</div>
         <div class="uc-case-title">Android / Google Workspace users</div>
         <div class="uc-case-desc">Deeply embedded in Gmail, Docs, Sheets, and Android. If you live in Google's ecosystem, Gemini is the most frictionless choice.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p5', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p5"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">Look at the last 10 emails in my Gmail inbox, then open my Google Doc titled "Q2 Planning" and cross-reference any action items mentioned in emails against the tasks already listed in the doc. Add any missing items to the doc under a new section called "Inbox-Derived Actions" with the sender's name and date.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">Gemini's deep integration with Gmail and Google Docs means it can read both sources natively and write back to Docs — a cross-app workflow that requires no copy-pasting or third-party tools.</div>
+        </div></div>
       </div>
+
       <div class="uc-case">
         <div class="uc-case-icon">☁️</div>
         <div class="uc-case-title">Enterprise Google Cloud workloads</div>
         <div class="uc-case-desc">Vertex AI integration, GCP tooling, and enterprise compliance. Best for teams already standardized on Google Cloud infrastructure.</div>
+        <button class="uc-prompt-btn" onclick="togglePrompt('gem-p6', this)">✦ Example prompt <span class="btn-arrow">▼</span></button>
+        <div class="uc-prompt-drawer" id="gem-p6"><div class="uc-prompt-inner">
+          <div class="uc-prompt-box">We're running a data pipeline on Google Cloud (BigQuery + Cloud Functions + Pub/Sub). It's processing 50M events/day but latency has degraded 40% over the past month. Diagnose the most likely bottlenecks given this architecture, suggest specific GCP configuration changes to investigate first, and outline a load-testing plan to confirm the fix.<button class="uc-prompt-copy" onclick="copyPrompt(this)">copy</button></div>
+          <div class="uc-prompt-why-label">Why this works for Gemini</div>
+          <div class="uc-prompt-why">Gemini's deep GCP training means it understands BigQuery quotas, Pub/Sub throughput limits, and Cloud Functions cold start behavior with specificity that generic models can't match.</div>
+        </div></div>
       </div>
+
     </div>
     <div class="uc-avoid">
       <div class="uc-avoid-label">Not the best choice for</div>
@@ -632,11 +865,13 @@
   </div>
 </div>
 
-<!-- <div class="legend">
+<!-- legend removed: redundant with use case picker
+<div class="legend">
   <div class="legend-item"><div class="dot" style="background:#C96442"></div> Claude <span class="legend-company">&nbsp;by Anthropic</span></div>
   <div class="legend-item"><div class="dot" style="background:#19C37D"></div> ChatGPT <span class="legend-company">&nbsp;by OpenAI</span></div>
   <div class="legend-item"><div class="dot" style="background:#4285F4"></div> Gemini <span class="legend-company">&nbsp;by Google</span></div>
-</div> -->
+</div>
+-->
 
 <!-- TABS -->
 <div class="tabs" id="tabs">
@@ -798,6 +1033,22 @@ function switchTab(idx) {
 }
 
 renderTable(0);
+
+function togglePrompt(id, btn) {
+  const drawer = document.getElementById(id);
+  const isOpen = drawer.classList.contains('open');
+  drawer.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+}
+
+function copyPrompt(btn) {
+  const box = btn.parentElement;
+  const text = box.childNodes[0].textContent.trim();
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = 'copied!';
+    setTimeout(() => btn.textContent = 'copy', 2000);
+  });
+}
 
 function showUC(model) {
   ['claude','chatgpt','gemini'].forEach(m => {

@@ -56,6 +56,180 @@
     font-style: italic;
   }
 
+  /* ── Use Case Picker ── */
+  .uc-section {
+    margin-bottom: 48px;
+    animation: fadeUp 0.6s 0.05s ease both;
+  }
+
+  .uc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .uc-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  .uc-model-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .uc-model-btn {
+    padding: 8px 18px;
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .uc-model-btn.active-claude  { background: #C96442; border-color: #C96442; color: white; }
+  .uc-model-btn.active-chatgpt { background: #19C37D; border-color: #19C37D; color: white; }
+  .uc-model-btn.active-gemini  { background: #4285F4; border-color: #4285F4; color: white; }
+
+  .uc-btn-dot {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    vertical-align: middle;
+    margin-right: 2px;
+  }
+
+  .uc-btn-company {
+    font-weight: 300;
+    font-size: 11px;
+    opacity: 0.65;
+    margin-left: 2px;
+  }
+
+  .uc-model-btn.active-claude .uc-btn-company,
+  .uc-model-btn.active-chatgpt .uc-btn-company,
+  .uc-model-btn.active-gemini .uc-btn-company {
+    opacity: 0.8;
+  }
+
+  .uc-panel {
+    display: none;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+  }
+  .uc-panel.visible { display: block; }
+
+  .uc-panel-header {
+    padding: 24px 28px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .uc-model-badge {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Playfair Display', serif;
+    color: white;
+    padding: 6px 18px;
+    border-radius: 8px;
+  }
+
+  .uc-panel-tagline {
+    font-size: 15px;
+    color: #555;
+    font-style: italic;
+    line-height: 1.4;
+  }
+
+  .uc-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0;
+  }
+
+  .uc-case {
+    padding: 20px 28px;
+    border-bottom: 1px solid #F2EEE8;
+    border-right: 1px solid #F2EEE8;
+    transition: background 0.15s;
+    cursor: default;
+  }
+  .uc-case:hover { background: #FDFCFB; }
+
+  .uc-case-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+
+  .uc-case-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 4px;
+  }
+
+  .uc-case-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.5;
+  }
+
+  .uc-avoid {
+    padding: 18px 28px;
+    background: #FAFAF8;
+    border-top: 1px solid var(--border);
+  }
+
+  .uc-avoid-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #E05C5C;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .uc-avoid-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .uc-avoid-tag {
+    font-size: 12px;
+    color: #888;
+    background: white;
+    border: 1px solid #E5E0D8;
+    border-radius: 20px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .uc-avoid-tag::before { content: "✗"; color: #E05C5C; font-size: 11px; }
+
   .legend {
     display: flex;
     justify-content: center;
@@ -288,155 +462,6 @@
     .aspect { font-size: 12px; }
     .pip { width: 7px; height: 7px; }
   }
-
-  /* ── Use Case Picker ── */
-  .uc-section {
-    margin-top: 64px;
-    animation: fadeUp 0.6s 0.35s ease both;
-  }
-
-  .uc-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    text-align: center;
-    margin-bottom: 8px;
-    letter-spacing: -0.5px;
-  }
-
-  .uc-subtitle {
-    text-align: center;
-    font-size: 14px;
-    color: var(--muted);
-    margin-bottom: 32px;
-    font-style: italic;
-  }
-
-  .uc-model-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-  }
-
-  .uc-model-btn {
-    padding: 10px 24px;
-    border: 2px solid var(--border);
-    border-radius: 40px;
-    background: white;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: #999;
-  }
-
-  .uc-model-btn.active-claude  { background: #C96442; border-color: #C96442; color: white; }
-  .uc-model-btn.active-chatgpt { background: #19C37D; border-color: #19C37D; color: white; }
-  .uc-model-btn.active-gemini  { background: #4285F4; border-color: #4285F4; color: white; }
-
-  .uc-panel {
-    display: none;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.07);
-  }
-  .uc-panel.visible { display: block; }
-
-  .uc-panel-header {
-    padding: 24px 28px 20px;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .uc-model-badge {
-    font-size: 22px;
-    font-weight: 900;
-    font-family: 'Playfair Display', serif;
-    color: white;
-    padding: 6px 18px;
-    border-radius: 8px;
-  }
-
-  .uc-panel-tagline {
-    font-size: 15px;
-    color: #555;
-    font-style: italic;
-    line-height: 1.4;
-  }
-
-  .uc-cases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 0;
-  }
-
-  .uc-case {
-    padding: 20px 28px;
-    border-bottom: 1px solid #F2EEE8;
-    border-right: 1px solid #F2EEE8;
-    transition: background 0.15s;
-    cursor: default;
-  }
-  .uc-case:hover { background: #FDFCFB; }
-
-  .uc-case-icon {
-    font-size: 22px;
-    margin-bottom: 8px;
-  }
-
-  .uc-case-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #222;
-    margin-bottom: 4px;
-  }
-
-  .uc-case-desc {
-    font-size: 12px;
-    color: #888;
-    line-height: 1.5;
-  }
-
-  .uc-avoid {
-    padding: 18px 28px;
-    background: #FAFAF8;
-    border-top: 1px solid var(--border);
-  }
-
-  .uc-avoid-label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #E05C5C;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-
-  .uc-avoid-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .uc-avoid-tag {
-    font-size: 12px;
-    color: #888;
-    background: white;
-    border: 1px solid #E5E0D8;
-    border-radius: 20px;
-    padding: 4px 12px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .uc-avoid-tag::before { content: "✗"; color: #E05C5C; font-size: 11px; }
 </style>
 </head>
 <body>
@@ -445,7 +470,6 @@
   <div class="eyebrow">Independent Comparison · 2025–2026</div>
   <h1>Claude vs ChatGPT vs Gemini</h1>
   <p class="subtitle">An honest, balanced breakdown across six dimensions</p>
-  <p class="subtitle">Generated by Claude on 07MAR2026</p> 
 </div>
 
 <!-- USE CASE PICKER -->
@@ -454,9 +478,9 @@
   <p class="uc-subtitle">Select your model to see its ideal use cases — and where to avoid it</p>
 
   <div class="uc-model-tabs">
-    <button class="uc-model-btn" onclick="showUC('claude')" id="btn-claude">🟠 Claude</button>
-    <button class="uc-model-btn" onclick="showUC('chatgpt')" id="btn-chatgpt">🟢 ChatGPT</button>
-    <button class="uc-model-btn" onclick="showUC('gemini')" id="btn-gemini">🔵 Gemini</button>
+    <button class="uc-model-btn" onclick="showUC('claude')" id="btn-claude"><span class="uc-btn-dot" style="background:#C96442"></span> Claude <span class="uc-btn-company">by Anthropic</span></button>
+    <button class="uc-model-btn" onclick="showUC('chatgpt')" id="btn-chatgpt"><span class="uc-btn-dot" style="background:#19C37D"></span> ChatGPT <span class="uc-btn-company">by OpenAI</span></button>
+    <button class="uc-model-btn" onclick="showUC('gemini')" id="btn-gemini"><span class="uc-btn-dot" style="background:#4285F4"></span> Gemini <span class="uc-btn-company">by Google</span></button>
   </div>
 
   <!-- CLAUDE -->
@@ -607,12 +631,12 @@
     </div>
   </div>
 </div>
- 
-<div class="legend">
+
+<!-- <div class="legend">
   <div class="legend-item"><div class="dot" style="background:#C96442"></div> Claude <span class="legend-company">&nbsp;by Anthropic</span></div>
   <div class="legend-item"><div class="dot" style="background:#19C37D"></div> ChatGPT <span class="legend-company">&nbsp;by OpenAI</span></div>
   <div class="legend-item"><div class="dot" style="background:#4285F4"></div> Gemini <span class="legend-company">&nbsp;by Google</span></div>
-</div>
+</div> -->
 
 <!-- TABS -->
 <div class="tabs" id="tabs">

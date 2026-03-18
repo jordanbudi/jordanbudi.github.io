@@ -132,16 +132,44 @@
     display: none;
     background: white;
     border: 1px solid var(--border);
+    border-top: 3px solid transparent;
     border-radius: 16px;
-    overflow: hidden;
     box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    position: relative;
+    margin-top: 12px;
   }
-
+  .uc-panel.visible { display: block; }
   #uc-claude.visible  { border-top-color: var(--claude); }
   #uc-chatgpt.visible { border-top-color: var(--chatgpt); }
   #uc-gemini.visible  { border-top-color: var(--gemini); }
- 
-  .uc-panel.visible { display: block; }
+
+  .uc-panel.visible::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: var(--notch-x, 50%);
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    z-index: 2;
+  }
+
+  .uc-panel.visible::after {
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: var(--notch-x, 50%);
+    transform: translateX(-50%);
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+    z-index: 1;
+  }
+
+  #uc-claude.visible::after  { border-bottom-color: var(--claude); }
+  #uc-chatgpt.visible::after { border-bottom-color: var(--chatgpt); }
+  #uc-gemini.visible::after  { border-bottom-color: var(--gemini); }
 
   .uc-panel-header {
     padding: 24px 28px 20px;
@@ -1038,7 +1066,7 @@ function switchTab(idx) {
 }
 
 renderTable(0);
- showUC('claude');
+showUC('claude');
 
 function togglePrompt(id, btn) {
   const drawer = document.getElementById(id);
@@ -1062,8 +1090,18 @@ function showUC(model) {
     const btn = document.getElementById('btn-' + m);
     btn.classList.remove('active-claude','active-chatgpt','active-gemini');
   });
-  document.getElementById('uc-' + model).classList.add('visible');
-  document.getElementById('btn-' + model).classList.add('active-' + model);
+  const panel = document.getElementById('uc-' + model);
+  const btn = document.getElementById('btn-' + model);
+  panel.classList.add('visible');
+  btn.classList.add('active-' + model);
+
+  // Position triangle under the active button
+  requestAnimationFrame(() => {
+    const btnRect = btn.getBoundingClientRect();
+    const panelRect = panel.getBoundingClientRect();
+    const offset = (btnRect.left + btnRect.width / 2) - panelRect.left;
+    panel.style.setProperty('--notch-x', offset + 'px');
+  });
 }
 </script>
 </body>

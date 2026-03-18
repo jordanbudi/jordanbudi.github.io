@@ -611,8 +611,8 @@
 
 <!-- BUY ME A COFFEE -->
 <div style="text-align:center; margin-top:-24px; margin-bottom:40px; animation: fadeUp 0.6s 0.05s ease both;">
-  <a href="https://www.buymeacoffee.com/jordanbudi" target="_blank" style="display:inline-flex; align-items:center; gap:8px; background:white; border:1px solid var(--border); border-radius:40px; padding:8px 20px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--text); text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
-    ☕ Buy me a coffee <span style="color:var(--muted); font-size:11px; font-weight:300; margin-left:2px;">— if this was helpful</span>
+  <a href="https://www.buymeacoffee.com/jordanbudi" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--border); border-radius:40px; padding:9px 22px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--text); text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+    <span style="font-size:22px; line-height:1;">☕</span> Buy me a coffee? <span style="color:var(--muted); font-size:11px; font-weight:300; margin-left:2px;">— if this is helpful</span>
   </a>
 </div>
 
@@ -990,6 +990,12 @@
   </div>
 </div>
 
+<div style="text-align:center; margin-top:48px; margin-bottom:16px;">
+  <a href="https://www.buymeacoffee.com/jordanbudi" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--border); border-radius:40px; padding:9px 22px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; color:var(--text); text-decoration:none; box-shadow:0 2px 8px rgba(0,0,0,0.06); transition:all 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='0 2px 8px rgba(0,0,0,0.06)'">
+    <span style="font-size:22px; line-height:1;">☕</span> Buy me a coffee? <span style="color:var(--muted); font-size:11px; font-weight:300; margin-left:2px;">— if this was helpful</span>
+  </a>
+</div>
+
 <p class="footer-note">
   Ratings reflect general consensus as of early 2026. All three models are rapidly evolving —<br/>
   capabilities shift with new releases. The best model depends heavily on your use case.
@@ -1092,6 +1098,8 @@ function copyPrompt(btn) {
 }
 
 function showUC(model) {
+  const modelColors = { claude: '#C96442', chatgpt: '#19C37D', gemini: '#4285F4' };
+
   ['claude','chatgpt','gemini'].forEach(m => {
     document.getElementById('uc-' + m).classList.remove('visible');
     const btn = document.getElementById('btn-' + m);
@@ -1109,7 +1117,25 @@ function showUC(model) {
     const offset = (btnRect.left + btnRect.width / 2) - panelRect.left;
     panel.style.setProperty('--notch-x', offset + 'px');
   });
+
+  // Recolor the BMC floating widget button
+  const color = modelColors[model];
+  const bmcBtn = document.querySelector('#bmc-wbtn, .bmc-btn, [id^="bmc"]');
+  if (bmcBtn) {
+    bmcBtn.style.backgroundColor = color;
+    bmcBtn.style.transition = 'background-color 0.4s ease';
+  }
+  // Also try targeting the iframe's button via the injected element
+  const bmcWidget = document.querySelector('.bmc-cookie-consent-btn, .bmc-widget-button, #bmc-wbtn');
+  if (bmcWidget) {
+    bmcWidget.style.backgroundColor = color;
+    bmcWidget.style.transition = 'background-color 0.4s ease';
+  }
 }
 </script>
+
+<!-- Buy Me A Coffee floating widget -->
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="jordanbudi" data-description="Support me on Buy me a coffee!" data-message="" data-color="#C96442" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
 </body>
 </html>

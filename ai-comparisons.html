@@ -580,7 +580,7 @@
     text-align: center;
     font-size: 12px;
     color: #BBB;
-    margin-top: 48px;
+    margin-top: 16px;
     font-style: italic;
     line-height: 1.7;
     animation: fadeUp 0.6s 0.4s ease both;
@@ -599,9 +599,162 @@
     .aspect { font-size: 12px; }
     .pip { width: 7px; height: 7px; }
   }
+
+  /* ── Sticky Category Nav ── */
+  .cat-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(246, 243, 238, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 20px;
+  }
+
+  .cat-nav-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    gap: 8px;
+  }
+
+  .cat-nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    white-space: nowrap;
+    letter-spacing: -0.3px;
+    flex-shrink: 0;
+  }
+
+  .cat-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .cat-nav-links::-webkit-scrollbar { display: none; }
+
+  .cat-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+    cursor: pointer;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--muted);
+    transition: all 0.15s;
+    background: none;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .cat-nav-item:hover { color: var(--text); background: white; border-color: var(--border); }
+
+  .cat-nav-item.active {
+    background: var(--text);
+    color: white;
+    border-color: var(--text);
+  }
+
+  .cat-nav-item.coming-soon {
+    opacity: 0.45;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .cat-nav-badge {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: var(--border);
+    color: var(--muted);
+    padding: 2px 6px;
+    border-radius: 10px;
+  }
+
+  /* ── Coding Tools Placeholder ── */
+  .coming-soon-section {
+    margin-top: 64px;
+    text-align: center;
+    padding: 56px 24px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  }
+
+  .coming-soon-eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .coming-soon-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 4vw, 34px);
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+
+  .coming-soon-sub {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 36px;
+  }
+
+  .coming-soon-tools {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .coming-soon-tool {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .coming-soon-tool-icon { font-size: 16px; }
 </style>
 </head>
 <body>
+
+<!-- STICKY CATEGORY NAV -->
+<nav class="cat-nav">
+  <div class="cat-nav-inner">
+    <span class="cat-nav-logo">AI Comparisons</span>
+    <div class="cat-nav-links">
+      <a class="cat-nav-item active" href="#">💬 Chat Models</a>
+      <a class="cat-nav-item coming-soon" href="#">💻 Coding Tools <span class="cat-nav-badge">Soon</span></a>
+      <a class="cat-nav-item coming-soon" href="#">🎨 Image Generators <span class="cat-nav-badge">Soon</span></a>
+      <a class="cat-nav-item coming-soon" href="#">🎙️ Voice AI <span class="cat-nav-badge">Soon</span></a>
+    </div>
+  </div>
+</nav>
 
 <div class="header">
   <div class="eyebrow">Independent Comparison · 2025–2026</div>
@@ -996,6 +1149,20 @@
   </a>
 </div>
 
+<!-- CODING TOOLS PLACEHOLDER -->
+<div class="coming-soon-section">
+  <div class="coming-soon-eyebrow">Next Up</div>
+  <div class="coming-soon-title">AI Coding Tools Compared</div>
+  <p class="coming-soon-sub">Claude Code, Codex, Lovable, Cursor, Replit — and more. Coming soon.</p>
+  <div class="coming-soon-tools">
+    <div class="coming-soon-tool"><span class="coming-soon-tool-icon">🤖</span> Claude Code</div>
+    <div class="coming-soon-tool"><span class="coming-soon-tool-icon">⚡</span> Codex</div>
+    <div class="coming-soon-tool"><span class="coming-soon-tool-icon">💜</span> Lovable</div>
+    <div class="coming-soon-tool"><span class="coming-soon-tool-icon">🔵</span> Cursor</div>
+    <div class="coming-soon-tool"><span class="coming-soon-tool-icon">🔁</span> Replit</div>
+  </div>
+</div>
+
 <p class="footer-note">
   Ratings reflect general consensus as of early 2026. All three models are rapidly evolving —<br/>
   capabilities shift with new releases. The best model depends heavily on your use case.
@@ -1125,7 +1292,6 @@ function showUC(model) {
     bmcBtn.style.backgroundColor = color;
     bmcBtn.style.transition = 'background-color 0.4s ease';
   }
-  // Also try targeting the iframe's button via the injected element
   const bmcWidget = document.querySelector('.bmc-cookie-consent-btn, .bmc-widget-button, #bmc-wbtn');
   if (bmcWidget) {
     bmcWidget.style.backgroundColor = color;

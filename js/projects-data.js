@@ -6,15 +6,14 @@
 
 const PROJECTS = [
   {
-    id: "emoji-classifier",
-    title: "Emoji classifier",
-    year: "2019",
-    tags: ["TensorFlow.js", "Machine learning"],
-    blurb: "An image recognition tool that uses your webcam to guess which of 4 emojis you've drawn on paper.",
-    thumbnail: "img/projects/emoji-classifier.jpg",
-    embedUrl: "https://editor.p5js.org/jordanbudi/full/LcD6dtwKT",
-    linkUrl: "https://editor.p5js.org/jordanbudi/full/77qOcycyw",
-    allow: "camera; microphone"
+    id: "smash-bros-companion",
+    title: "Super Smash Brothers Game Mode Companion",
+    year: "2026",
+    tags: ["Loveable"],["React"],
+    blurb: "When the normal Smash Bros verus mode gets stale, use this tool for new ways to play.",
+    thumbnail: "img/projects/blank.jpg",
+    embedUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/",
+    linkUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/"
   },
   {
     id: "draw-your-emoji",
@@ -25,7 +24,18 @@ const PROJECTS = [
     thumbnail: "img/projects/draw-your-emoji.jpg",
     embedUrl: "https://editor.p5js.org/jordanbudi/full/WJc2InNUu",
     linkUrl: "https://editor.p5js.org/jordanbudi/full/WJc2InNUu"
-  }
+  },
+  {
+    id: "emoji-classifier",
+    title: "Emoji classifier",
+    year: "2019",
+    tags: ["TensorFlow.js", "Machine learning"],
+    blurb: "An image recognition tool that uses your webcam to guess which of 4 emojis you've drawn on paper.",
+    thumbnail: "img/projects/emoji-classifier.jpg",
+    embedUrl: "https://editor.p5js.org/jordanbudi/full/LcD6dtwKT",
+    linkUrl: "https://editor.p5js.org/jordanbudi/full/77qOcycyw",
+    allow: "camera; microphone"
+  },
 ];
 
 const STUDENT_PROJECTS = [

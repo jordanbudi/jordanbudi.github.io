@@ -11,7 +11,7 @@ const PROJECTS = [
     year: "2026",
     tags: ["Loveable"],["React"],
     blurb: "When the normal Smash Bros verus mode gets stale, use this tool for new ways to play.",
-    thumbnail: "img/projects/blank.jpg",
+    thumbnail: "img/projects/smash-bros.png",
     embedUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/",
     linkUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/"
   },

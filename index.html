@@ -29,6 +29,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/resume.min.css" rel="stylesheet">
+    <link href="css/projects.css" rel="stylesheet">
   </head>
 
   <body id="page-top">
@@ -535,29 +536,43 @@
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="my-projects">
         <div class="my-auto">
-          <h2 class="mb-5">My Projects</h2>
+          <h2 class="mb-4">My Projects</h2>
 
-          <p class="mb-5">Most of these projects are utilizing javascript frameworks; as a high school computer science teacher I found that kids were more invested the faster they could see their own work in the wild, and so javascript allows for things to show up on the web much faster.</p>
-          <h3 class="mb-0">(2019) Emoji Classifier (best viewed on desktop/laptop)</h3>
-          <p class="mb-3">Created an image recognition tool utilizing TensorFlow.js via Teachable Machine to recognize drawings as emojis. <br> Currently the model is only trained to recognize 4 emojis: 💩,  🐸, 😂, and 😘. <br> <strong> Just draw one of these 4 emojis on a piece of paper and hold it up to your webcam and see if this model can recognize what you drew.</strong></p>
-          <iframe width="100%" height="600" style="max-width: 800px; display: block;" src="https://editor.p5js.org/jordanbudi/full/LcD6dtwKT" allow="camera; microphone"></iframe>          <p  class="mb-5">If your camera isn't detected, you can try opening up the project in a separate window, then cycle through webcam devices <a href="https://editor.p5js.org/jordanbudi/full/77qOcycyw" target="_blank" rel="noopener noreferrer">Click to Open in New Window</a></p>
+          <p class="mb-4">Most of these projects use javascript frameworks; as a high school computer science teacher I found that kids were more invested the faster they could see their own work in the wild, and javascript lets things show up on the web fast. Click a project to try it out.</p>
 
-          <h3 class="mb-0">Draw Your Emoji (best viewed on desktop)</h3>
-          <p class="mb-3">I wanted to show students a fast way to collect images to train ML models. So I built this little drawing tool and had all my students make drawings with it, save them, then add them to a google drive. I could then upload their images to our model.
-            <br>
-            <strong>Click and hold to draw, then click the  <em>Save to PNG</em></strong> button.
-          </p>
-          <iframe width="500" height="500" src="https://editor.p5js.org/jordanbudi/full/WJc2InNUu"></iframe>
+          <div class="project-grid" id="projects-grid"></div>
         </div>
       </section>
 
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="my-students-projects">
         <div class="my-auto">
-          <h2 class="mb-5">My Student's Projects</h2>
-          <p class="mb-0">I spent 8 years teaching high school math and computer science. I loved teaching, especially teaching kids who didn't have confidence in their own abilities in math or computer science. Here are some of their projects.</p>
-          <br><p><a href="/studentwork">Mr. Budi's Student Projects</a><br>Will be integrated here soon (vs sending you to another site)</p>
+          <h2 class="mb-4">My Student's Projects</h2>
+          <p class="mb-4">I spent 8 years teaching high school math and computer science. I loved teaching, especially teaching kids who didn't have confidence in their own abilities in math or computer science. Here are some of their projects.</p>
+
+          <div class="project-grid" id="student-projects-grid"></div>
+
+          <p class="mb-0"><a href="/studentwork" target="_blank" rel="noopener noreferrer">See more student work at Mr. Budi's Student Projects</a></p>
         </div>
       </section>
+    </div>
+
+    <div class="modal fade" id="project-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <iframe class="modal-embed-frame" src=""></iframe>
+          </div>
+          <div class="modal-footer">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="modal-open-new-tab btn btn-outline-secondary btn-sm">Open in new tab <i class="fa fa-external-link" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript -->
@@ -569,6 +584,10 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/resume.min.js"></script>
+
+    <!-- Projects grid -->
+    <script src="js/projects-data.js"></script>
+    <script src="js/projects.js"></script>
 
     <!-- KOFI Widget -->
     <!-- <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>

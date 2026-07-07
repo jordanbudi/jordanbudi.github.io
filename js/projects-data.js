@@ -9,7 +9,7 @@ const PROJECTS = [
     id: "smash-bros-companion",
     title: "Super Smash Brothers Game Mode Companion",
     year: "2026",
-    tags: ["Loveable"],["React"],
+    tags: ["Loveable", "React"],
     blurb: "When the normal Smash Bros verus mode gets stale, use this tool for new ways to play.",
     thumbnail: "img/projects/smash-bros.png",
     embedUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/",
@@ -35,7 +35,7 @@ const PROJECTS = [
     embedUrl: "https://editor.p5js.org/jordanbudi/full/LcD6dtwKT",
     linkUrl: "https://editor.p5js.org/jordanbudi/full/77qOcycyw",
     allow: "camera; microphone"
-  },
+  }
 ];
 
 const STUDENT_PROJECTS = [

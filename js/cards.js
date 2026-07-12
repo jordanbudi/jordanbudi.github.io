@@ -99,4 +99,34 @@
 
   renderMediaCards("interests-grid", typeof INTERESTS !== "undefined" ? INTERESTS : []);
   renderMediaCards("awards-grid", typeof AWARDS !== "undefined" ? AWARDS : []);
+
+  // Lightbox: click any card image (projects, students, interests, awards)
+  // to expand it centered on screen, with an X (or Esc / backdrop click) to close.
+  function openLightbox(src, alt) {
+    var overlay = document.createElement("div");
+    overlay.className = "image-lightbox";
+    overlay.innerHTML =
+      '<button type="button" class="image-lightbox-close" aria-label="Close">&times;</button>' +
+      '<img src="' + src + '" alt="' + (alt || "") + '">';
+
+    function close() {
+      overlay.remove();
+      document.removeEventListener("keydown", onKey);
+    }
+    function onKey(e) {
+      if (e.key === "Escape") close();
+    }
+
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay || e.target.closest(".image-lightbox-close")) close();
+    });
+    document.addEventListener("keydown", onKey);
+    document.body.appendChild(overlay);
+  }
+
+  document.addEventListener("click", function (e) {
+    var img = e.target.closest(".project-thumb img");
+    if (!img) return;
+    openLightbox(img.src, img.alt);
+  });
 })();

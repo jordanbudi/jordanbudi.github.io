@@ -40,11 +40,13 @@ const PROJECTS = [
 
 // Thumbnails below point at the GIFs already hosted on the studentwork site.
 // To use local images instead, drop files into img/projects/ and update the paths.
+// Student names are first name + last initial; grade = the student's grade when they built it.
 const STUDENT_PROJECTS = [
   {
     id: "music-and-code",
     title: "Music and Code",
-    tags: ["JavaScript", "by Kiara Nickens"],
+    year: "2020",
+    tags: ["JavaScript", "by Kiara N.", "11th grade"],
     blurb: "An interactive animation synchronized with music that responds to mouse clicks and holds.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/BLM-losinControl.gif",
     embedUrl: "https://knickens.github.io/music-code",
@@ -53,7 +55,8 @@ const STUDENT_PROJECTS = [
   {
     id: "js-calculator",
     title: "JavaScript Calculator",
-    tags: ["JavaScript", "by Rushea Davis"],
+    year: "2019",
+    tags: ["JavaScript", "by Rushea D.", "10th grade"],
     blurb: "A fully functional calculator built from scratch with JavaScript, HTML, and CSS.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/rusheaCalculator.gif",
     embedUrl: "https://big-face.github.io/javascript-html-calculator/",
@@ -62,7 +65,8 @@ const STUDENT_PROJECTS = [
   {
     id: "baby-namify",
     title: "Baby Namify",
-    tags: ["Web app", "by Alexis Weaver & Moses Avin"],
+    year: "2019",
+    tags: ["Web app", "by Alexis W. & Moses A.", "10th grade"],
     blurb: "A baby name generator focused on Black and Caribbean names, filling a representation gap in existing apps.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/babyNames.gif",
     linkUrl: "https://baby-namify-0a437ca1d6f9.herokuapp.com/"
@@ -70,7 +74,8 @@ const STUDENT_PROJECTS = [
   {
     id: "sauce-game",
     title: "Sauce Game",
-    tags: ["Twilio API", "by Andrea Eberhardt"],
+    year: "2019",
+    tags: ["Twilio API", "by Andrea E.", "10th grade"],
     blurb: "A humorous app with real SMS functionality through the Twilio API and a polished design.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/saucegame.gif",
     linkUrl: "https://saucegame.herokuapp.com/"
@@ -78,7 +83,8 @@ const STUDENT_PROJECTS = [
   {
     id: "vr-dream",
     title: "VR Dream",
-    tags: ["A-Frame", "WebVR", "by Dagmawit Zeleke"],
+    year: "2019",
+    tags: ["A-Frame", "WebVR", "by Dagmawit Z.", "10th grade"],
     blurb: "An abstract virtual reality experience with colorful shapes and a dreamlike immersive environment.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/vrDream.gif",
     embedUrl: "https://dzeleke.github.io/vrdream",

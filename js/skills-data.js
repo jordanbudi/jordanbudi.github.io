@@ -13,31 +13,43 @@ const SKILL_GROUPS = [
       { label: "Agile & sprint planning" },
       { label: "Cross-functional team leadership" },
       { label: "Roadmapping & milestone planning" },
-      { label: "JIRA & Confluence" },
+      { label: "Risk & dependency management" },
       { label: "Stakeholder communication" }
+    ]
+  },
+  {
+    id: "military",
+    title: "Military Leadership",
+    blurb: "15 years as a U.S. Army Reserve officer — Field Grade planning, leading, and executing under real uncertainty.",
+    skills: [
+      { label: "Strategic & operational planning" },
+      { label: "Leading through uncertainty" },
+      { label: "Aligning large organizations" },
+      { label: "Civil Affairs & Signal Corps", href: "#experience" },
+      { label: "Field Grade Officer (Major)" }
     ]
   },
   {
     id: "teaching",
     title: "Teaching & Communication",
-    blurb: "Eight years teaching high school math and computer science — the rarest production skill is making complex things clear.",
+    blurb: "Eight years teaching high school math and computer science — I just really like explaining complex things, and I'm good at it.",
     skills: [
       { label: "Curriculum design", href: "#experience" },
+      { label: "Explaining hard things simply" },
       { label: "Mentoring & coaching" },
       { label: "Public speaking" },
-      { label: "Explaining hard things simply" }
+      { label: "A/B-tested learning design", href: "#experience" },
+      { label: "National Geographic education advisory" }
     ]
   },
   {
     id: "ai",
     title: "AI-Augmented Building",
-    blurb: "I don't train models — I ship things with them.",
+    blurb: "I build and ship with AI every day — working prototypes, real tools, and classroom curriculum.",
     skills: [
-      { label: "Claude & Claude Code" },
-      { label: "ChatGPT" },
-      { label: "Lovable", href: "#my-projects" },
-      { label: "TensorFlow.js & Teachable Machine", href: "#my-projects" },
+      { label: "AI-assisted development (Claude, ChatGPT, Lovable)", href: "#my-projects" },
       { label: "AI curriculum design (AI4ALL)", href: "#experience" },
+      { label: "ML in the classroom (TensorFlow.js)", href: "#my-projects" },
       { label: "Prompt-driven prototyping" }
     ]
   },
@@ -46,12 +58,9 @@ const SKILL_GROUPS = [
     title: "Building for the Web",
     blurb: "Enough of the web stack to take an idea to a live URL.",
     skills: [
-      { label: "JavaScript" },
-      { label: "HTML & CSS" },
-      { label: "Bootstrap" },
-      { label: "p5.js", href: "#my-projects" },
-      { label: "Git & GitHub Pages" },
-      { label: "WordPress" }
+      { label: "JavaScript & the modern web stack" },
+      { label: "p5.js creative coding", href: "#my-projects" },
+      { label: "Git & GitHub Pages" }
     ]
   }
 ];

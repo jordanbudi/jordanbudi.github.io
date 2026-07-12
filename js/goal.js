@@ -8,11 +8,19 @@
     : 0;
   var barWidth = Math.min(percent, 100);
   var kofiLabel = goal.kofiUrl.replace(/^https?:\/\//, "");
+  var labelText = percent + "% of $" + goal.goalAmount;
+  // The label sits inside the blue fill when there's room, otherwise just after it
+  var labelInside = barWidth >= 35;
 
   container.innerHTML =
     '<div class="support-goal-card">' +
       '<div class="support-goal-header">' +
         '<span class="support-goal-title">' + goal.title + '</span>' +
+        '<button type="button" class="btn btn-outline-secondary btn-sm support-goal-share" data-share="kofi">' +
+          '<i class="fa fa-share" aria-hidden="true"></i> Share' +
+        '</button>' +
+        /* Buy Me a Coffee share option (inactive) — to offer both again, replace the
+           button above with this dropdown:
         '<div class="dropdown">' +
           '<button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
             '<i class="fa fa-share" aria-hidden="true"></i> Share' +
@@ -22,14 +30,17 @@
             '<button type="button" class="dropdown-item" data-share="bmc">Share Buy Me a Coffee page</button>' +
           '</div>' +
         '</div>' +
+        */
       '</div>' +
       '<div class="support-goal-bar">' +
-        '<div class="support-goal-fill" style="width: ' + barWidth + '%;"></div>' +
-        '<div class="support-goal-bar-label">' + percent + '% of $' + goal.goalAmount + '</div>' +
+        '<div class="support-goal-fill" style="width: ' + barWidth + '%;">' +
+          (labelInside ? '<span class="support-goal-bar-label">' + labelText + '</span>' : '') +
+        '</div>' +
+        (!labelInside ? '<span class="support-goal-bar-label support-goal-bar-label-out" style="left: ' + barWidth + '%;">' + labelText + '</span>' : '') +
       '</div>' +
       (goal.lastUpdated ? '<div class="support-goal-updated">Last updated: ' + goal.lastUpdated + '</div>' : '') +
       '<a class="support-goal-link" href="' + goal.kofiUrl + '" target="_blank" rel="noopener noreferrer">' +
-        '<i class="fa fa-coffee" aria-hidden="true"></i> ' + kofiLabel +
+        '<img class="kofi-cup" src="https://storage.ko-fi.com/cdn/cup-border.png" alt="" aria-hidden="true"> ' + kofiLabel +
       '</a>' +
     '</div>';
 
@@ -38,9 +49,9 @@
       navigator.share({ title: goal.title, url: url }).catch(function () {});
     } else if (navigator.clipboard) {
       navigator.clipboard.writeText(url).then(function () {
-        var original = button.textContent;
+        var original = button.innerHTML;
         button.textContent = "Link copied!";
-        setTimeout(function () { button.textContent = original; }, 1500);
+        setTimeout(function () { button.innerHTML = original; }, 1500);
       });
     } else {
       window.open(url, "_blank", "noopener");

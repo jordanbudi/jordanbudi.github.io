@@ -33,7 +33,7 @@ const PROJECTS = [
     year: "2019",
     tags: ["TensorFlow.js", "Machine learning"],
     blurb: "An image recognition tool that uses your webcam to guess which of 4 emojis you've drawn on paper.",
-    images: ["img/projects/emoji-classifier-1.gif", "img/projects/emoji-classifier-2.png", "img/projects/emoji-classifier-3.png,"],
+    images: ["img/projects/emoji-classifier-1.gif", "img/projects/emoji-classifier-2.png", "img/projects/emoji-classifier-3.png"],
     embedUrl: "https://editor.p5js.org/jordanbudi/full/LcD6dtwKT",
     linkUrl: "https://editor.p5js.org/jordanbudi/full/77qOcycyw",
     allow: "camera; microphone"

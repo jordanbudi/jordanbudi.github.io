@@ -1,5 +1,7 @@
 // Add a new project by copying an object below into the matching array.
-// thumbnail: path to an image/gif in img/projects/ (shows a placeholder until you add one)
+// thumbnail: path to a single image/gif in img/projects/ (shows a placeholder until you add one)
+// images: use this instead of thumbnail to show 2+ pictures as an auto-revolving
+//   carousel with arrows and dots, e.g. images: ["img/projects/foo-1.jpg", "img/projects/foo-2.jpg"]
 // embedUrl: page to load in the "View project" modal (leave blank to just link out instead)
 // linkUrl: "open in new tab" destination, also used when embedUrl is blank
 // allow: iframe permissions policy, only needed if the embed uses camera/mic (e.g. "camera; microphone")
@@ -21,7 +23,7 @@ const PROJECTS = [
     year: "2019",
     tags: ["p5.js"],
     blurb: "A simple drawing tool I built so students could quickly collect training images for our shared ML model.",
-    thumbnail: "img/projects/draw-your-emoji.jpg",
+    thumbnail: "img/projects/draw-your-emoji.gif",
     embedUrl: "https://editor.p5js.org/jordanbudi/full/WJc2InNUu",
     linkUrl: "https://editor.p5js.org/jordanbudi/full/WJc2InNUu"
   },

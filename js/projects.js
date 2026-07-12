@@ -1,18 +1,10 @@
 (function () {
   function cardHtml(project) {
-    var tags = (project.tags || [])
-      .map(function (tag) { return '<span class="project-tag">' + tag + '</span>'; })
-      .join("");
-    var yearTag = project.year ? '<span class="project-tag project-tag-year">' + project.year + '</span>' : "";
-
     return (
       '<div class="project-card">' +
-        '<div class="project-thumb">' +
-          '<img src="' + project.thumbnail + '" alt="' + project.title + '" loading="lazy" ' +
-            'onerror="this.parentNode.classList.add(\'project-thumb-fallback\'); this.remove();">' +
-        '</div>' +
+        MediaCard.mediaHtml(project) +
         '<div class="project-body">' +
-          '<div class="project-tags">' + tags + yearTag + '</div>' +
+          MediaCard.tagsHtml(project) +
           '<h3 class="project-title">' + project.title + '</h3>' +
           '<p class="project-blurb">' + project.blurb + '</p>' +
           '<button type="button" class="btn btn-outline-primary btn-sm project-view-btn" ' +
@@ -29,6 +21,7 @@
     if (!container) return;
     if (!projects || !projects.length) return;
     container.innerHTML = projects.map(cardHtml).join("");
+    MediaCard.initCarousels(container);
   }
 
   renderGrid("projects-grid", typeof PROJECTS !== "undefined" ? PROJECTS : []);

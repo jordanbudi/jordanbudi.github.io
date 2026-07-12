@@ -19,7 +19,8 @@ The "My Projects" and "My Student's Projects" sections are rendered from a singl
    | `year` | Shows as a small tag, e.g. `"2024"`. | No |
    | `tags` | Array of short labels, e.g. `["React", "API"]`. Shows as pills on the card. | No |
    | `blurb` | One or two sentences describing the project. Keep it short — it's meant to be skimmed. | Yes |
-   | `thumbnail` | Path to an image, e.g. `"img/projects/weather-app.jpg"`. Shows a placeholder icon until the file actually exists there. | Yes (path can point to a not-yet-added file) |
+   | `thumbnail` | Path to a single image, e.g. `"img/projects/weather-app.jpg"`. Shows a placeholder icon until the file actually exists there. | Yes, unless using `images` |
+   | `images` | Use instead of `thumbnail` to show 2+ pictures as an auto-revolving carousel with arrows and dots — same as the Interests/Awards cards below, e.g. `["img/projects/weather-app-1.jpg", "img/projects/weather-app-2.jpg"]`. | No |
    | `embedUrl` | The URL to load inside the "View project" popup. Use this if the project can run in an iframe (p5.js editor, CodePen, a hosted demo, etc). Leave it out entirely if it can't be embedded. | No |
    | `linkUrl` | Where "Open in new tab" goes. If you skip `embedUrl`, this is also what "View project" opens directly. | Yes, unless `embedUrl` is set |
    | `allow` | Only needed if the embedded project needs camera/mic access, e.g. `"camera; microphone"`. | No |
@@ -48,18 +49,16 @@ The exact same process works for the `STUDENT_PROJECTS` array further down in th
 
 ## Interests and Awards cards
 
-Same card idea, different data files: [`js/interests-data.js`](js/interests-data.js) and [`js/awards-data.js`](js/awards-data.js).
-
-The one difference from projects: instead of a single `thumbnail`, these use an `images` array:
-
-```js
-images: ["img/awards/natgeo-arctic-1.jpg", "img/awards/natgeo-arctic-2.jpg"]
-```
+Same card idea, different data files: [`js/interests-data.js`](js/interests-data.js) and [`js/awards-data.js`](js/awards-data.js). These always use the `images` array (see above) rather than `thumbnail`, but it's the same field and behaves identically.
 
 - **One image** = static thumbnail.
 - **Two or more images** = auto-revolving carousel with arrows and dots. Just add more paths to the array.
 - Drop the actual image files into `img/interests/` or `img/awards/`. Missing files show a gray placeholder — nothing breaks.
 - `linkUrl` is optional; when present the card gets a "Read more" button.
+
+All four card grids (Projects, Student Projects, Interests, Awards) share the same thumbnail/carousel code in [`js/media-card.js`](js/media-card.js) — a fix or style change there applies everywhere at once. Only the click-through behavior differs: Projects/Student Projects open a "View project" modal, Interests/Awards link straight out.
+
+Clicking any card's image (in any of the four sections) opens it full-size in a lightbox, regardless of whether it's a single image or a carousel frame.
 
 ## Support goal progress bar
 

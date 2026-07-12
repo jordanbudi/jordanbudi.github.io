@@ -9,7 +9,7 @@
   function slideHtml(src, title) {
     return (
       '<div class="carousel-slide">' +
-        '<img src="' + src + '" alt="' + title + '" ' +
+        '<img src="' + src + '" alt="' + title + '" loading="lazy" ' +
           'onerror="this.parentNode.classList.add(\'slide-missing\'); this.remove();">' +
       '</div>'
     );

@@ -10,36 +10,38 @@ const SKILL_GROUPS = [
     blurb: "The day job: shipping and operating live games with large teams at Blizzard and Infinity Ward.",
     skills: [
       { label: "Live ops & release management", href: "#experience" },
+      { label: "Business Minded Producer" },
       { label: "Agile & sprint planning" },
       { label: "Cross-functional team leadership" },
       { label: "Roadmapping & milestone planning" },
-      { label: "Risk & dependency management" },
       { label: "Stakeholder communication" }
     ]
   },
   {
     id: "military",
     title: "Military Leadership",
-    blurb: "15 years as a U.S. Army Reserve officer — Field Grade planning, leading, and executing under real uncertainty.",
+    blurb: "15 years as a U.S. Army Reserve Officer. Field Grade planning, leading, and executing under real uncertainty.",
     skills: [
       { label: "Strategic & operational planning" },
       { label: "Leading through uncertainty" },
       { label: "Aligning large organizations" },
-      { label: "Civil Affairs & Signal Corps", href: "#experience" },
+      { label: "Civil Affairs", href: "#experience" },
+      { label: "Signal Corps", href: "#experience" },
       { label: "Field Grade Officer (Major)" }
     ]
   },
   {
     id: "teaching",
     title: "Teaching & Communication",
-    blurb: "Eight years teaching high school math and computer science — I just really like explaining complex things, and I'm good at it.",
+    blurb: "Eight years teaching high school math and computer science — I like explaining complex things in engaging ways, and I think I'm good at it.",
     skills: [
       { label: "Curriculum design", href: "#experience" },
+      { label: "School Building" },
       { label: "Explaining hard things simply" },
       { label: "Mentoring & coaching" },
       { label: "Public speaking" },
       { label: "A/B-tested learning design", href: "#experience" },
-      { label: "National Geographic education advisory" }
+      { label: "National Geographic education advisory council" }
     ]
   },
   {
@@ -60,7 +62,7 @@ const SKILL_GROUPS = [
     skills: [
       { label: "JavaScript & the modern web stack" },
       { label: "p5.js creative coding", href: "#my-projects" },
-      { label: "Git & GitHub Pages" }
+      { label: "Git" }
     ]
   }
 ];

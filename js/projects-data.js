@@ -45,7 +45,7 @@ const STUDENT_PROJECTS = [
   {
     id: "music-and-code",
     title: "Music and Code",
-    year: "2020",
+    year: "2018",
     tags: ["JavaScript", "by Kiara N.", "11th grade"],
     blurb: "An interactive animation synchronized with music that responds to mouse clicks and holds.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/BLM-losinControl.gif",
@@ -55,7 +55,7 @@ const STUDENT_PROJECTS = [
   {
     id: "js-calculator",
     title: "JavaScript Calculator",
-    year: "2019",
+    year: "2016",
     tags: ["JavaScript", "by Rushea D.", "10th grade"],
     blurb: "A fully functional calculator built from scratch with JavaScript, HTML, and CSS.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/rusheaCalculator.gif",
@@ -65,7 +65,7 @@ const STUDENT_PROJECTS = [
   {
     id: "baby-namify",
     title: "Baby Namify",
-    year: "2019",
+    year: "2015",
     tags: ["Web app", "by Alexis W. & Moses A.", "10th grade"],
     blurb: "A baby name generator focused on Black and Caribbean names, filling a representation gap in existing apps.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/babyNames.gif",
@@ -74,7 +74,7 @@ const STUDENT_PROJECTS = [
   {
     id: "sauce-game",
     title: "Sauce Game",
-    year: "2019",
+    year: "2015",
     tags: ["Twilio API", "by Andrea E.", "10th grade"],
     blurb: "A humorous app with real SMS functionality through the Twilio API and a polished design.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/saucegame.gif",
@@ -83,13 +83,14 @@ const STUDENT_PROJECTS = [
   {
     id: "vr-dream",
     title: "VR Dream",
-    year: "2019",
+    year: "2018",
     tags: ["A-Frame", "WebVR", "by Dagmawit Z.", "10th grade"],
     blurb: "An abstract virtual reality experience with colorful shapes and a dreamlike immersive environment.",
     thumbnail: "https://jordanbudi.github.io/studentwork/images/vrDream.gif",
     embedUrl: "https://dzeleke.github.io/vrdream",
     linkUrl: "https://dzeleke.github.io/vrdream"
-  },
+  }
+  /*,
   {
     id: "more-student-work",
     title: "More student projects",
@@ -97,5 +98,5 @@ const STUDENT_PROJECTS = [
     blurb: "Explore the full gallery of student work at Mr. Budi's Student Projects site.",
     thumbnail: "img/projects/studentwork.jpg",
     linkUrl: "https://jordanbudi.github.io/studentwork"
-  }
+  }*/
 ];

@@ -45,3 +45,34 @@ Works the same way in reverse: delete the object, or cut-paste it to a different
 ## Student projects
 
 The exact same process works for the `STUDENT_PROJECTS` array further down in the same file, for the "My Student's Projects" section.
+
+## Interests and Awards cards
+
+Same card idea, different data files: [`js/interests-data.js`](js/interests-data.js) and [`js/awards-data.js`](js/awards-data.js).
+
+The one difference from projects: instead of a single `thumbnail`, these use an `images` array:
+
+```js
+images: ["img/awards/natgeo-arctic-1.jpg", "img/awards/natgeo-arctic-2.jpg"]
+```
+
+- **One image** = static thumbnail.
+- **Two or more images** = auto-revolving carousel with arrows and dots. Just add more paths to the array.
+- Drop the actual image files into `img/interests/` or `img/awards/`. Missing files show a gray placeholder — nothing breaks.
+- `linkUrl` is optional; when present the card gets a "Read more" button.
+
+## Support goal progress bar
+
+The goal bar in the About section is driven by [`js/goal-data.js`](js/goal-data.js). To update it, edit the numbers by hand (there's no Ko-fi/BMC API to auto-update it):
+
+```js
+title: "Test run",      // goal name shown on the card
+currentAmount: 55,      // update this as donations come in
+goalAmount: 100,        // the target
+```
+
+The percentage and bar width recalculate automatically. `kofiUrl` and `bmcUrl` feed the Share button options.
+
+## Switching between Ko-fi and Buy Me a Coffee
+
+Both support buttons live in `index.html`, marked with `(active)` / `(inactive)` comments — one block near the top in the About section (the inline button) and one at the bottom (the floating widget). To switch, comment out the active block and uncomment the inactive one.

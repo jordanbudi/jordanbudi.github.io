@@ -38,14 +38,58 @@ const PROJECTS = [
   }
 ];
 
+// Thumbnails below point at the GIFs already hosted on the studentwork site.
+// To use local images instead, drop files into img/projects/ and update the paths.
 const STUDENT_PROJECTS = [
-  // {
-  //   id: "example-student-project",
-  //   title: "Example student project",
-  //   year: "2018",
-  //   tags: ["Scratch"],
-  //   blurb: "One sentence describing what the student built.",
-  //   thumbnail: "img/projects/example-student-project.jpg",
-  //   linkUrl: "https://..."
-  // }
+  {
+    id: "music-and-code",
+    title: "Music and Code",
+    tags: ["JavaScript", "by Kiara Nickens"],
+    blurb: "An interactive animation synchronized with music that responds to mouse clicks and holds.",
+    thumbnail: "https://jordanbudi.github.io/studentwork/images/BLM-losinControl.gif",
+    embedUrl: "https://knickens.github.io/music-code",
+    linkUrl: "https://knickens.github.io/music-code"
+  },
+  {
+    id: "js-calculator",
+    title: "JavaScript Calculator",
+    tags: ["JavaScript", "by Rushea Davis"],
+    blurb: "A fully functional calculator built from scratch with JavaScript, HTML, and CSS.",
+    thumbnail: "https://jordanbudi.github.io/studentwork/images/rusheaCalculator.gif",
+    embedUrl: "https://big-face.github.io/javascript-html-calculator/",
+    linkUrl: "https://big-face.github.io/javascript-html-calculator/"
+  },
+  {
+    id: "baby-namify",
+    title: "Baby Namify",
+    tags: ["Web app", "by Alexis Weaver & Moses Avin"],
+    blurb: "A baby name generator focused on Black and Caribbean names, filling a representation gap in existing apps.",
+    thumbnail: "https://jordanbudi.github.io/studentwork/images/babyNames.gif",
+    linkUrl: "https://baby-namify-0a437ca1d6f9.herokuapp.com/"
+  },
+  {
+    id: "sauce-game",
+    title: "Sauce Game",
+    tags: ["Twilio API", "by Andrea Eberhardt"],
+    blurb: "A humorous app with real SMS functionality through the Twilio API and a polished design.",
+    thumbnail: "https://jordanbudi.github.io/studentwork/images/saucegame.gif",
+    linkUrl: "https://saucegame.herokuapp.com/"
+  },
+  {
+    id: "vr-dream",
+    title: "VR Dream",
+    tags: ["A-Frame", "WebVR", "by Dagmawit Zeleke"],
+    blurb: "An abstract virtual reality experience with colorful shapes and a dreamlike immersive environment.",
+    thumbnail: "https://jordanbudi.github.io/studentwork/images/vrDream.gif",
+    embedUrl: "https://dzeleke.github.io/vrdream",
+    linkUrl: "https://dzeleke.github.io/vrdream"
+  },
+  {
+    id: "more-student-work",
+    title: "More student projects",
+    tags: ["Full gallery"],
+    blurb: "Explore the full gallery of student work at Mr. Budi's Student Projects site.",
+    thumbnail: "img/projects/studentwork.jpg",
+    linkUrl: "https://jordanbudi.github.io/studentwork"
+  }
 ];

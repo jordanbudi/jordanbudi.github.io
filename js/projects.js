@@ -8,7 +8,7 @@
     return (
       '<div class="project-card">' +
         '<div class="project-thumb">' +
-          '<img src="' + project.thumbnail + '" alt="' + project.title + '" ' +
+          '<img src="' + project.thumbnail + '" alt="' + project.title + '" loading="lazy" ' +
             'onerror="this.parentNode.classList.add(\'project-thumb-fallback\'); this.remove();">' +
         '</div>' +
         '<div class="project-body">' +

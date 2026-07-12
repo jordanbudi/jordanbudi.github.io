@@ -23,8 +23,11 @@
           '</div>' +
         '</div>' +
       '</div>' +
-      '<div class="support-goal-bar"><div class="support-goal-fill" style="width: ' + barWidth + '%;"></div></div>' +
-      '<div class="support-goal-caption"><strong>' + percent + '%</strong> of $' + goal.goalAmount + ' goal</div>' +
+      '<div class="support-goal-bar">' +
+        '<div class="support-goal-fill" style="width: ' + barWidth + '%;"></div>' +
+        '<div class="support-goal-bar-label">' + percent + '% of $' + goal.goalAmount + '</div>' +
+      '</div>' +
+      (goal.lastUpdated ? '<div class="support-goal-updated">Last updated: ' + goal.lastUpdated + '</div>' : '') +
       '<a class="support-goal-link" href="' + goal.kofiUrl + '" target="_blank" rel="noopener noreferrer">' +
         '<i class="fa fa-coffee" aria-hidden="true"></i> ' + kofiLabel +
       '</a>' +

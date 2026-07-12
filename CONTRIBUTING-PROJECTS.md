@@ -73,6 +73,14 @@ goalAmount: 100,        // the target
 
 The percentage and bar width recalculate automatically. `kofiUrl` and `bmcUrl` feed the Share button options.
 
+## Skills section
+
+The grouped skill pills are driven by [`js/skills-data.js`](js/skills-data.js). Each group has a `title`, a one-line `blurb`, and a `skills` list. Give a skill an `href` to turn its pill into a proof link — `"#my-projects"` scrolls to a section on the page, a full URL opens in a new tab.
+
+## If a change doesn't show up on the live site
+
+GitHub Pages caches files for about 10 minutes, so a just-merged change can look "broken" (old CSS with new HTML). Either wait it out, hard-refresh (Ctrl+Shift+R), or bump the `?v=` number on the css/js links in `index.html` — that forces every visitor to fetch the new files immediately.
+
 ## Switching between Ko-fi and Buy Me a Coffee
 
 Both support buttons live in `index.html`, marked with `(active)` / `(inactive)` comments — one block near the top in the About section (the inline button) and one at the bottom (the floating widget). To switch, comment out the active block and uncomment the inactive one.

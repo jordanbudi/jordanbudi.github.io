@@ -10,7 +10,11 @@ const INTERESTS = [
     title: "Magic",
     tags: ["Sleight of hand"],
     blurb: "The David Blaine kind — close-up card magic and street magic.",
-    images: ["img/interests/magic-1.jpg"]
+    images: [
+      "img/interests/magic-1.jpg",
+      "img/interests/magic-2.jpg",
+      "img/interests/magic-3.jpg"
+    ]
   },
   {
     id: "education",

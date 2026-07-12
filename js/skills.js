@@ -13,7 +13,7 @@
           '<a class="skill-pill" href="' + skill.href + '"' +
             (external ? ' target="_blank" rel="noopener noreferrer"' : '') + '>' +
             skill.label +
-            ' <i class="fa ' + (external ? "fa-external-link" : "fa-arrow-down") + '" aria-hidden="true"></i>' +
+            ' <i class="fa ' + (external ? "fa-external-link" : "fa-link") + '" aria-hidden="true"></i>' +
           '</a>'
         );
       }

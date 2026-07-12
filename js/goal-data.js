@@ -5,10 +5,11 @@
 // The bar and percentage recalculate automatically from the two amounts.
 
 const SUPPORT_GOAL = {
-  title: "Help me buy some art assets for my next project",
+  title: "Art Assets for Jordan's Next Unannounced Project",
   currentAmount: 220,
   goalAmount: 400,
-  lastUpdated: "November 11, 2026",
+  lastUpdated: "July 11, 2026",
   kofiUrl: "https://ko-fi.com/jordanbudi",
+  // bmcUrl kept for the (commented-out) Buy Me a Coffee share option in goal.js
   bmcUrl: "https://www.buymeacoffee.com/jordanbudi"
 };

@@ -11,9 +11,13 @@ const INTERESTS = [
     tags: ["Sleight of hand", "Broker of Wonder (ask me about it)"],
     blurb: "Coolest person I've performed magic for is M.C. Hammer; coolest place I've performed magic is the White House",
     images: [
-      "img/interests/magic-1.jpg",
-      "img/interests/magic-2.jpg",
-      "img/interests/magic-3.jpg"
+      "img/interests/magic-1.jpg", //note filetype
+      "img/interests/magic-2.jpg", //note filetype
+      "img/interests/magic-3.png", //note filetype 
+      "img/interests/magic-4.jpg", //note filetype
+      "img/interests/magic-5.png", //note filetype
+      "img/interests/magic-6.png", //note filetype
+      "img/interests/magic-7.png"
     ]
   },
   {
@@ -22,9 +26,10 @@ const INTERESTS = [
     tags: ["Teaching"],
     blurb: "8 years in the classroom and still obsessed with how people learn new things.",
     images: [
-      "img/interests/education-1.jpg",
+      "img/interests/education-1.jpg", //note filetype
       "img/interests/education-2.jpg",
-      "img/interests/education-3.jpg"
+      "img/interests/education-3.png",
+      "img/interests/education-4.png"
     ]
   },
   {
@@ -32,13 +37,18 @@ const INTERESTS = [
     title: "Gaming",
     tags: ["Design", "Dev", "Business"],
     blurb: "Design, development, business, and everything in between.",
-    images: ["img/interests/gaming-1.jpg"]
+    images: [
+      "img/interests/gaming-1.jpg",
+      "img/interests/gaming-2.jpg",
+      "img/interests/gaming-3.jpg",
+      "img/interests/gaming-4.jpg",
+      ]
   },
   {
     id: "film-tv",
     title: "Film & television",
     tags: ["Storytelling"],
     blurb: "A good story well told — from prestige TV to popcorn blockbusters.",
-    images: ["img/interests/film-tv-1.jpg"]
+    images: ["img/interests/film-and-tv-1.jpg"]
   }
 ];

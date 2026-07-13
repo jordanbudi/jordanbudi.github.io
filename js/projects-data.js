@@ -18,6 +18,16 @@ const PROJECTS = [
     linkUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/"
   },
   {
+    id: "ai-comparison",
+    title: "AI Tool Comparison Reference Sheet",
+    year: "2026",
+    tags: ["React"],
+    blurb: "A tool to help you sift through choices and make a decision instead of research paralysis",
+    thumbnail: "img/projects/ai-comparisons.gif",
+    embedUrl: "https://jordanbudi.github.io/ai-comparisons",
+    linkUrl: "https://jordanbudi.github.io/ai-comparisons"
+  },
+  {
     id: "draw-your-emoji",
     title: "Draw your emoji",
     year: "2019",
@@ -36,6 +46,25 @@ const PROJECTS = [
     images: ["img/projects/emoji-classifier-1.gif", "img/projects/emoji-classifier-2.png", "img/projects/emoji-classifier-3.png"],
     embedUrl: "https://editor.p5js.org/jordanbudi/full/LcD6dtwKT",
     linkUrl: "https://editor.p5js.org/jordanbudi/full/77qOcycyw",
+    allow: "camera; microphone"
+  },
+  {
+    id: "viet-vr",
+    title: "Viet VR",
+    year: "2018",
+    tags: ["Virtual Reality", "Product Development", "Prototyping", "A/B Testing"],
+    blurb: "Built 3 Virtual Reality Apps for the Oculus Go and deployed to 4 History Classrooms to test the efficacy of virtual reality as a medium for learning.",
+    images: [
+      "img/projects/viet-vr-1.png", 
+      "img/projects/viet-vr-2.jpeg", 
+      "img/projects/viet-vr-3.jpeg",
+      "img/projects/viet-vr-4.png",
+      "img/projects/viet-vr-5.png",
+      "img/projects/viet-vr-6.png",
+      "img/projects/viet-vr-7.png"
+      ],
+    embedUrl: "https://fb.watch/IkgW01DuaL/",
+    linkUrl: "https://fb.watch/IkgW01DuaL/",
     allow: "camera; microphone"
   }
 ];

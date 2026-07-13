@@ -18,6 +18,16 @@ const PROJECTS = [
     linkUrl: "https://jordanbudi.github.io/smashbros-protect-the-vip-tracker-app/"
   },
   {
+    id: "ai-4-all",
+    title: "AI Curriculum Development: Practitioner Partner",
+    year: "2019-2021",
+    tags: ["Curriculum Development", "Artificial Intelligence"],
+    blurb: "I spent 2 years working with AI4ALL on Artificial Intelligence Curriculum for high schools.",
+    images: ["img/projects/ai-4-all-1.png"],
+    embedUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/",
+    linkUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/"
+  },
+  {
     id: "ai-comparison",
     title: "AI Tool Comparison Reference Sheet",
     year: "2026",

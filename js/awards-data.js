@@ -8,23 +8,25 @@ const AWARDS = [
     id: "shine-award",
     title: "Governor's Shine Award",
     year: "2015",
-    tags: ["Teaching", "2016"],
+    tags: ["Teaching"],
     blurb: "Governor of Florida's Shine Award for Distinguished Teaching.",
     images: ["img/awards/shine-1.jpg"]
   },
   {
     id: "natgeo-arctic",
     title: "National Geographic Grosvenor Teacher Fellow",
-    tags: ["Expedition", "2018"],
+    year: "2018",
+    tags: ["Expedition"],
     blurb: "Selected as a Grosvenor Teacher Fellow and sent on an expedition to the Arctic.",
     images: [
       "img/awards/natgeo-1.jpg",
-      "img/awards/natgeo-2.jpg",
+      "img/awards/natgeo-2.JPG",
       "img/awards/natgeo-3.jpg",
       "img/awards/natgeo-4.jpg",
       "img/awards/natgeo-5.jpg",
       "img/awards/natgeo-6.jpg"
-    ]
+    ],
+    linkUrl: "https://www.expeditions.com/about/press-room/lindblad-expeditions-and-national-geographic-society-announce-12th-annual-class-of-grosvenor-teacher-fellows"
   },
   {
     id: "ucla-fellowship",
@@ -39,7 +41,7 @@ const AWARDS = [
     year: "2020",
     tags: ["Press"],
     blurb: "Featured in Meet the MBA Class of 2022.",
-    images: ["img/awards/poets-quants-1.png"],
+    images: ["img/awards/poets-and-quants-1.png"],
     linkUrl: "https://poetsandquants.com/2020/12/18/meet-the-mba-class-of-2022-jordan-budisantoso-ucla-anderson/?"
   },
   {
@@ -56,8 +58,11 @@ const AWARDS = [
     title: "Viceland Feature - Beyond the Frame: The New Classroom ",
     year: "2017",
     tags: ["Press"],
-    blurb: "Always trying to be at the forefront of the field, I spent 18 months exploring the applications of virtual reality for learning",
-    images: ["img/awards/poets-quants-1.png"],
-    linkUrl: "https://youtu.be/zGGVYT0cMHg?si=PQfTb5EBQU9-wD2N"
+    blurb: "Always trying to be at the forefront of the field, I spent years exploring the applications of virtual reality for learning and was featured on Viceland for my work",
+    images: [
+      "img/awards/viceland-1.png",
+      "img/awards/viceland-2.png"
+      ],
+    linkUrl: "https://youtu.be/zGGVYT0cMHg?si=PQfT5bEBQU9-wD2N"
   }
 ];

@@ -9,12 +9,12 @@ const INTERESTS = [
     id: "magic",
     title: "Magic",
     tags: ["Sleight of hand", "Broker of Wonder (ask me about it)"],
-    blurb: "Coolest person I've performed magic for is M.C. Hammer; coolest place I've performed magic is the White House",
+    blurb: "Magic has led to so many cool experiences. Performing for the likes of M.C. Hammer; to places like the White House, the kitchens of Three Michelin Star restuarants, oprhanages in Indonesia, and the lower ship decks of the National Geogrpahic Explorer.",
     images: [
-      "img/interests/magic-1.jpg", //note filetype
-      "img/interests/magic-2.jpg", //note filetype
+      "img/interests/magic-1.JPG", //note filetype
+      "img/interests/magic-2.JPG", //note filetype
       "img/interests/magic-3.png", //note filetype 
-      "img/interests/magic-4.jpg", //note filetype
+      "img/interests/magic-4.JPG", //note filetype
       "img/interests/magic-5.png", //note filetype
       "img/interests/magic-6.png", //note filetype
       "img/interests/magic-7.png"

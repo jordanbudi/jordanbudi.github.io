@@ -26,8 +26,8 @@ const INTERESTS = [
     tags: ["Teaching"],
     blurb: "8 years in the classroom and still obsessed with how people learn new things.",
     images: [
-      "img/interests/education-1.jpg", //note filetype
-      "img/interests/education-2.jpg",
+      "img/interests/education-1.JPG", //note filetype
+      "img/interests/education-2.jpeg",
       "img/interests/education-3.png",
       "img/interests/education-4.png"
     ]

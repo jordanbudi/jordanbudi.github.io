@@ -32,14 +32,14 @@ const PROJECTS = [
     title: "National Geographic Series: Storytelling for Impact",
     year: "2020",
     tags: ["Curriculum Development", "Storytelling"],
-    blurb: "Hand-picked from National Geographic's Teacher Advisory Council for a paid expert reviewer role, vetting manuscripts and footage across the full Storytelling for Impact course — named a Gold Winner at the Anthem Awards (from the team behind the Webbys).",
+    blurb: "Hand-picked from National Geographic's Teacher Advisory Council for a paid expert reviewer role, vetting manuscripts and footage across the full Storytelling for Impact course — the course was named a Gold Winner at the Anthem Awards (from the team behind the Webbys).",
     images: [
       "img/projects/natgeo-storytelling-1.jpg",
       "img/projects/natgeo-storytelling-2.jpg",
       "img/projects/natgeo-storytelling-3.jpg",
       "img/projects/natgeo-storytelling-4.jpg"
     ],
-    embedUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/",
+    embedUrl: "https://www.youtube.com/embed/Q97S2HYegJs?si=KUrBftE-SAbKblSt",
     linkUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/"
   },
   {

@@ -34,12 +34,45 @@
 
   // Lightbox: click any card image (projects, students, interests, awards)
   // to expand it centered on screen, with an X (or Esc / backdrop click) to close.
-  function openLightbox(src, alt) {
+  // Cards with multiple images get prev/next arrows, dot pips, and a counter,
+  // navigable by click or arrow keys.
+  function openLightbox(images, startIndex, alt) {
+    var index = startIndex;
+    var count = images.length;
+    var multi = count > 1;
+
     var overlay = document.createElement("div");
     overlay.className = "image-lightbox";
+
+    var nav = "";
+    if (multi) {
+      var dots = images.map(function (_, i) {
+        return '<button type="button" class="image-lightbox-dot' + (i === index ? " active" : "") + '" data-slide="' + i + '" aria-label="Image ' + (i + 1) + '"></button>';
+      }).join("");
+      nav =
+        '<button type="button" class="image-lightbox-arrow image-lightbox-prev" aria-label="Previous image">&#10094;</button>' +
+        '<button type="button" class="image-lightbox-arrow image-lightbox-next" aria-label="Next image">&#10095;</button>' +
+        '<div class="image-lightbox-footer">' +
+          '<div class="image-lightbox-dots">' + dots + '</div>' +
+          '<div class="image-lightbox-counter"></div>' +
+        '</div>';
+    }
+
     overlay.innerHTML =
       '<button type="button" class="image-lightbox-close" aria-label="Close">&times;</button>' +
-      '<img src="' + src + '" alt="' + (alt || "") + '">';
+      '<img src="' + images[index] + '" alt="' + (alt || "") + '">' + nav;
+
+    var img = overlay.querySelector("img");
+    var dotEls = overlay.querySelectorAll(".image-lightbox-dot");
+    var counter = overlay.querySelector(".image-lightbox-counter");
+
+    function goTo(i) {
+      index = (i + count) % count;
+      img.src = images[index];
+      dotEls.forEach(function (dot, d) { dot.classList.toggle("active", d === index); });
+      if (counter) counter.textContent = (index + 1) + " / " + count;
+    }
+    if (multi) goTo(index);
 
     function close() {
       overlay.remove();
@@ -47,9 +80,15 @@
     }
     function onKey(e) {
       if (e.key === "Escape") close();
+      else if (multi && e.key === "ArrowLeft") goTo(index - 1);
+      else if (multi && e.key === "ArrowRight") goTo(index + 1);
     }
 
     overlay.addEventListener("click", function (e) {
+      if (e.target.closest(".image-lightbox-prev")) { goTo(index - 1); return; }
+      if (e.target.closest(".image-lightbox-next")) { goTo(index + 1); return; }
+      var dot = e.target.closest(".image-lightbox-dot");
+      if (dot) { goTo(parseInt(dot.getAttribute("data-slide"), 10)); return; }
       if (e.target === overlay || e.target.closest(".image-lightbox-close")) close();
     });
     document.addEventListener("keydown", onKey);
@@ -59,6 +98,11 @@
   document.addEventListener("click", function (e) {
     var img = e.target.closest(".project-thumb img");
     if (!img) return;
-    openLightbox(img.src, img.alt);
+    var thumb = img.closest(".project-thumb");
+    var slideImgs = Array.prototype.slice.call(thumb.querySelectorAll(".carousel-slide img"));
+    var images = slideImgs.map(function (im) { return im.src; });
+    var start = slideImgs.indexOf(img);
+    if (!images.length) { images = [img.src]; start = 0; }
+    openLightbox(images, start < 0 ? 0 : start, img.alt);
   });
 })();

@@ -307,6 +307,66 @@
   cursor: pointer;
 }
 
+.image-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.image-lightbox-arrow:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.image-lightbox-prev { left: 16px; }
+.image-lightbox-next { right: 16px; }
+
+.image-lightbox-footer {
+  position: absolute;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.image-lightbox-dots {
+  display: flex;
+  gap: 7px;
+  pointer-events: auto;
+}
+
+.image-lightbox-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.image-lightbox-dot.active {
+  background: #fff;
+}
+
+.image-lightbox-counter {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+}
+
 .project-thumb img {
   cursor: zoom-in;
 }

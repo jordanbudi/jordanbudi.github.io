@@ -19,10 +19,10 @@ const PROJECTS = [
   },
   {
     id: "ai-4-all",
-    title: "AI Curriculum Development: Practitioner Partner",
+    title: "AI-4-ALL Open Learning Platform",
     year: "2019-2021",
     tags: ["Curriculum Development", "Artificial Intelligence"],
-    blurb: "I spent 2 years working with AI4ALL on Artificial Intelligence Curriculum for high schools.",
+    blurb: "I spent 2 years partnering with AI4ALL on Artificial Intelligence Curriculum for high schools.",
     images: ["img/projects/ai-4-all-1.png"],
     embedUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/",
     linkUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/"
@@ -34,10 +34,10 @@ const PROJECTS = [
     tags: ["Curriculum Development", "Storytelling"],
     blurb: "Hand-picked from National Geographic's Teacher Advisory Council for a paid expert reviewer role, vetting manuscripts and footage across the full Storytelling for Impact course — the course was named a Gold Winner at the Anthem Awards (from the team behind the Webbys).",
     images: [
-      "img/projects/natgeo-storytelling-1.jpg",
-      "img/projects/natgeo-storytelling-2.jpg",
-      "img/projects/natgeo-storytelling-3.jpg",
-      "img/projects/natgeo-storytelling-4.jpg"
+      "img/projects/natgeo-storytelling-1.png",
+      "img/projects/natgeo-storytelling-2.png",
+      "img/projects/natgeo-storytelling-3.png",
+      "img/projects/natgeo-storytelling-4.png"
     ],
     embedUrl: "https://www.youtube.com/embed/Q97S2HYegJs?si=KUrBftE-SAbKblSt",
     linkUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/"

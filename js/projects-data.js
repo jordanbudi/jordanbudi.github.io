@@ -88,7 +88,7 @@ const PROJECTS = [
       "img/projects/viet-vr-6.png",
       "img/projects/viet-vr-7.png"
       ],
-    embedUrl: "https://fb.watch/IkgW01DuaL/",
+    embedUrl: "img/projects/viet-vr-00.mp4",
     linkUrl: "https://fb.watch/IkgW01DuaL/",
     allow: "camera; microphone"
   }

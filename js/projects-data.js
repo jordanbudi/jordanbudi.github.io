@@ -28,6 +28,21 @@ const PROJECTS = [
     linkUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/"
   },
   {
+    id: "natgeo-storytelling",
+    title: "National Geographic Series: Storytelling for Impact",
+    year: "2020",
+    tags: ["Curriculum Development", "Storytelling"],
+    blurb: "Hand-picked from National Geographic's Teacher Advisory Council for a paid expert reviewer role, vetting manuscripts and footage across the full Storytelling for Impact course — the course was named a Gold Winner at the Anthem Awards (from the team behind the Webbys).",
+    images: [
+      "img/projects/natgeo-storytelling-1.jpg",
+      "img/projects/natgeo-storytelling-2.jpg",
+      "img/projects/natgeo-storytelling-3.jpg",
+      "img/projects/natgeo-storytelling-4.jpg"
+    ],
+    embedUrl: "https://www.youtube.com/embed/Q97S2HYegJs?si=KUrBftE-SAbKblSt",
+    linkUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/"
+  },
+  {
     id: "ai-comparison",
     title: "AI Tool Comparison Reference Sheet",
     year: "2026",

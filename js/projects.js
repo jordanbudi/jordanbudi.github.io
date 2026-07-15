@@ -41,15 +41,20 @@
       if (!project) return;
 
       modal.querySelector(".modal-title").textContent = project.title;
-      modal.querySelector(".modal-open-new-tab").href = project.linkUrl || project.embedUrl;
+      var newTabLink = modal.querySelector(".modal-open-new-tab");
+      newTabLink.href = project.linkUrl || project.embedUrl;
+      newTabLink.innerHTML = (project.linkText || "Open in new tab") + ' <i class="fa fa-external-link" aria-hidden="true"></i>';
 
       var frame = modal.querySelector(".modal-embed-frame");
+      var fallback = modal.querySelector(".modal-embed-fallback");
       if (project.embedUrl) {
         frame.src = project.embedUrl;
         if (project.allow) frame.setAttribute("allow", project.allow);
         frame.style.display = "";
+        fallback.style.display = "none";
       } else {
         frame.style.display = "none";
+        fallback.style.display = "block";
       }
     });
 

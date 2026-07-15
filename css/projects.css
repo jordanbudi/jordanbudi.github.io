@@ -87,6 +87,13 @@
   border: 0;
 }
 
+#project-modal .modal-embed-fallback {
+  display: none;
+  margin: 2rem 0;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.55);
+}
+
 /* --- Image carousel (Interests / Awards cards) --- */
 
 .card-carousel {

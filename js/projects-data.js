@@ -24,7 +24,6 @@ const PROJECTS = [
     tags: ["Curriculum Development", "Artificial Intelligence"],
     blurb: "I spent 2 years partnering with AI4ALL on Artificial Intelligence Curriculum for high schools.",
     images: ["img/projects/ai-4-all-1.png"],
-    embedUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/",
     linkUrl: "https://ai-4-all.org/meet-an-open-learning-teacher-jordan-budisantoso/"
   },
   {
@@ -40,7 +39,8 @@ const PROJECTS = [
       "img/projects/natgeo-storytelling-4.png"
     ],
     embedUrl: "https://www.youtube.com/embed/Q97S2HYegJs?si=KUrBftE-SAbKblSt",
-    linkUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/"
+    linkUrl: "https://education.nationalgeographic.org/resource/storytelling-for-impact-videos/",
+    linkText: "See the full course"
   },
   {
     id: "ai-comparison",
